@@ -1,0 +1,17 @@
+interface:
+  display_name: glyph game builder
+  short_description: Create playable browser games whose primary visual medium is
+    ASCII, Unicode, or ANSI-inspired glyphs. Use when a coding agent must turn a game
+    concept into a glyph-based game with a complete core loop, state-driven rendering,
+    keyboard or touch input, and mechanical verification. Do not use for ordinary
+    text adventures, MUDs, multiplayer worlds, image-first or 3D-first games, or backend
+    game systems.
+  icon_small: assets/icon.svg
+  icon_large: assets/icon.svg
+policy:
+  products:
+  - chatgpt
+  - codex
+  - api
+  - atlas
+  allow_implicit_invocation: true
