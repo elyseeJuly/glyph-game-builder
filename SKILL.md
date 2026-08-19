@@ -51,7 +51,23 @@ Read [glyph-spec.md](references/glyph-spec.md). Create a compact Glyph Spec befo
 
 Every important glyph must be classified as `semantic`, `atmospheric`, or `decorative`. Bind semantic glyphs to game state and provide a legend, fallback, or non-color cue where needed. Atmospheric and decorative glyphs must not carry information required to complete the game.
 
-### 5. Model state before rendering
+### 5. Design scene composition when the game has visual places or objects
+
+If the game presents recognizable places, objects, vehicles, environments, or stateful visual beats, read [scene-composition.md](references/scene-composition.md) before implementing the renderer.
+
+Use this reference when dense glyph output risks becoming a technical diagram, when labels are doing the work of illustration, or when prose claims that the world is visibly rotating, drifting, pulsing, cycling, opening, or changing.
+
+For scene-based games, define:
+
+- one dominant subject per state or beat;
+- the intended recognition category without explanatory labels;
+- a scene grammar such as side silhouette, field composition, or instrument geometry;
+- state-bound semantic layers and motion classes;
+- a label-blind visual check for the target viewport.
+
+Do not impose a diorama stage on a grid-first arcade game when a full playfield is the clearer visual structure.
+
+### 6. Model state before rendering
 
 Separate the game into:
 
@@ -61,13 +77,13 @@ state → action/rules → transition → glyph renderer → browser UI
 
 Keep rules and state transitions testable without the DOM when practical. Make each core action produce an observable consequence. Mark any mechanics added by the agent as inferred or newly introduced when the concept is an adaptation of source material.
 
-### 6. Build the smallest playable slice
+### 7. Build the smallest playable slice
 
 Implement the complete core loop before adding secondary systems, large content sets, persistent progression, or visual effects. Keep the primary playfield character-based. Provide the input method required by the chosen loop and a visible route to settlement, failure, victory, or restart.
 
 If the game is browser-based and uses Unicode, ANSI-inspired styling, responsive cells, or mobile layout, read [browser-rendering.md](references/browser-rendering.md) before finalizing the renderer.
 
-### 7. Verify mechanically and visually
+### 8. Verify mechanically and visually
 
 Run the repository's existing checks first. Add only small project-local tests needed to verify:
 
@@ -79,9 +95,18 @@ Run the repository's existing checks first. Add only small project-local tests n
 - the glyph layout does not obviously overflow at the target viewport;
 - required information is not conveyed by color alone.
 
+When the game uses scene composition, also verify:
+
+- the main subject remains category-recognizable when labels and explanatory prose are hidden;
+- persistent visual changes are bound to real state changes;
+- visible continuous motion claimed by the game has a corresponding glyph manifestation;
+- transition motion communicates a player-triggered world change and does not block routine play;
+- reduced-motion mode leaves a readable static cue;
+- atmospheric effects do not cover semantic subjects.
+
 Use an available browser or equivalent runtime check when possible. Record unverified visual or device-specific claims instead of implying success.
 
-### 8. Deliver the handoff
+### 9. Deliver the handoff
 
 For a new or substantially changed game, provide:
 
@@ -117,6 +142,7 @@ Do not require every game to have three choices, a fixed number of endings, a fi
 - Read `media-fit.md` during the fit gate.
 - Read the relevant part of `loop-patterns.md` after selecting the dominant loop.
 - Read `glyph-spec.md` before defining character semantics or the renderer.
+- Read `scene-composition.md` when the game presents visual places, objects, vehicles, environments, layered scenes, or stateful visual beats.
 - Read `browser-rendering.md` only for browser character-cell, Unicode, ANSI-inspired, responsive, or accessibility concerns.
 - Read `persistent-world-memory.md` only after explicit persistent-world scope is accepted.
 
