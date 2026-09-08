@@ -67,6 +67,8 @@ For scene-based games, define:
 
 Do not impose a diorama stage on a grid-first arcade game when a full playfield is the clearer visual structure.
 
+For an already recognizable scene that needs richer material, lighting, or occlusion, optionally read [glyph-surface-rendering.md](references/glyph-surface-rendering.md). Use it for character-stroke surfaces; do not impose it on simple grid games.
+
 ### 6. Model state before rendering
 
 Separate the game into:
