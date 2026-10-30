@@ -77,7 +77,7 @@ Glyph Game Builder 是一个可复用的 **Agent Skill**。它帮助 AI 把游�
 - `references/persistent-world-memory.md`：仅在明确需要持久世界时使用。
 - `agents/openai.yaml` 与 `assets/icon.svg`：宿主元数据与图标。
 
-仓库还保存了部分历史审查报告，供了解设计背景；它们不是 Skill 运行必需的文件。
+跨项目历史审查报告已归档在本仓库之外；这些报告不是 Skill 安装或运行必需的文件。
 
 ## Skill 运行后应该交付什么
 

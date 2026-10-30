@@ -86,7 +86,7 @@ glyph-game-builder/
 └── LICENSE
 ```
 
-The repository also preserves historical audit notes. Those are background records, not required installation dependencies or included game demos.
+Historical cross-project evaluation reports are maintained outside this public-facing skill repository. They are not required for installing or running the skill.
 
 ## Expected output from a game-building task
 
